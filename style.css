@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 body {
@@ -10,10 +12,12 @@ body {
   padding: 15px;
 }
 
+/* ===== APP CONTAINER ===== */
 .app {
   background: #fff;
-  width: 420px;
-  padding: 14px;
+  width: 100%;
+  max-width: 900px;   /* Desktop max width */
+  padding: 18px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,.12);
 }
@@ -22,33 +26,36 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .brand img {
-  width: 42px;
-  height: 42px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 2px solid #1d4ed8;
 }
 
 .brand-name {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   color: #1d4ed8;
 }
 
 .brand-phone {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 
+/* ===== FORM ELEMENTS ===== */
 input, select, button {
   width: 100%;
   padding: 10px;
   margin: 6px 0;
   border-radius: 8px;
   border: 1px solid #ddd;
+  font-size: 14px;
 }
 
 button {
@@ -57,39 +64,51 @@ button {
   font-weight: 600;
 }
 
+/* ===== FLEX ROW ===== */
 .row {
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  flex-wrap: wrap;  /* Important for mobile */
 }
 
-.row button { flex: 1; }
+.row button {
+  flex: 1;
+}
 
+/* ===== BUTTON COLORS ===== */
 .add { background: #1d4ed8; color: #fff; }
 .in { background: #16a34a; color: #fff; }
 .out { background: #f59e0b; color: #fff; }
 .danger { background: #ef4444; color: #fff; }
 
+/* ===== INFO BOX ===== */
 .info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
   background: #f9fafb;
   padding: 10px;
   border-radius: 10px;
   margin: 8px 0;
+  font-size: 14px;
 }
 
+/* ===== CARDS ===== */
 .cards {
   display: flex;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .card {
-  flex: 1;
-  padding: 12px;
+  flex: 1 1 150px;   /* responsive width */
+  padding: 14px;
   border-radius: 12px;
   color: #fff;
   text-align: center;
+  font-size: 14px;
 }
 
 .cards .card:nth-child(1) { background: #3b82f6; }
@@ -99,15 +118,16 @@ button {
 .cards:nth-of-type(2) .card:nth-child(1) { background: #2563eb; }
 .cards:nth-of-type(2) .card:nth-child(2) { background: #ef4444; }
 
+/* ===== TABLE ===== */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 8px;
+  font-size: 13px;
 }
 
 table th, table td {
   padding: 8px;
-  font-size: 12px;
   text-align: center;
 }
 
@@ -120,7 +140,7 @@ tbody tr:nth-child(even) {
   background: #f1f5f9;
 }
 
-/* ===== SMALL ACTION BUTTONS (FINAL FIX) ===== */
+/* ===== SMALL ACTION BUTTONS ===== */
 .action-col {
   display: flex;
   gap: 4px;
@@ -149,7 +169,7 @@ tbody tr:nth-child(even) {
   color: #fff;
 }
 
-/* ===== Modal ===== */
+/* ===== MODAL ===== */
 .modal {
   display: none;
   position: fixed;
@@ -162,12 +182,42 @@ tbody tr:nth-child(even) {
 .modal-content {
   background: #fff;
   padding: 18px;
-  width: 90%;
-  max-width: 360px;
+  width: 95%;
+  max-width: 400px;
   border-radius: 12px;
 }
-@media (max-width:500px) {
-  .app{
-    width: 300px;
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .brand-name { font-size: 16px; }
+  .card { font-size: 13px; }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+
+  .app {
+    padding: 12px;
   }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  table th, table td {
+    font-size: 11px;
+    padding: 6px;
+  }
+
 }
