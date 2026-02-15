@@ -16,7 +16,7 @@ body {
 .app {
   background: #fff;
   width: 100%;
-  max-width: 900px;   /* Desktop max width */
+  max-width: 950px;   /* Desktop max width */
   padding: 18px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,.12);
@@ -68,7 +68,7 @@ button {
 .row {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;  /* Important for mobile */
+  flex-wrap: wrap;   /* important */
 }
 
 .row button {
@@ -86,12 +86,11 @@ button {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   background: #f9fafb;
   padding: 10px;
   border-radius: 10px;
   margin: 8px 0;
-  font-size: 14px;
 }
 
 /* ===== CARDS ===== */
@@ -103,7 +102,7 @@ button {
 }
 
 .card {
-  flex: 1 1 150px;   /* responsive width */
+  flex: 1 1 180px;   /* responsive */
   padding: 14px;
   border-radius: 12px;
   color: #fff;
@@ -140,7 +139,7 @@ tbody tr:nth-child(even) {
   background: #f1f5f9;
 }
 
-/* ===== SMALL ACTION BUTTONS ===== */
+/* ===== ACTION BUTTONS ===== */
 .action-col {
   display: flex;
   gap: 4px;
@@ -187,20 +186,17 @@ tbody tr:nth-child(even) {
   border-radius: 12px;
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ===== RESPONSIVE ===== */
 
 /* Tablet */
 @media (max-width: 768px) {
-  .brand-name { font-size: 16px; }
-  .card { font-size: 13px; }
+  .card {
+    flex: 1 1 45%;
+  }
 }
 
 /* Mobile */
 @media (max-width: 500px) {
-
-  .app {
-    padding: 12px;
-  }
 
   .row {
     flex-direction: column;
