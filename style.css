@@ -166,3 +166,8 @@ tbody tr:nth-child(even) {
   max-width: 360px;
   border-radius: 12px;
 }
+@media (max-width:500px) {
+  .app{
+    width: 300px;
+  }
+}
