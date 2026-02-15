@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>Tali Khata</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <div class="brand">
+    <img src="logo_mc.png">
+    <div>
+      <div class="brand-name">Modern Computer</div>
+      <div class="brand-phone">📞 01744889688</div>
+    </div>
+  </div>
+
+  <h2>📒 Tali Khata</h2>
+
+  <select id="customer"></select>
+
+  <div class="row">
+    <input id="newCustomer" placeholder="কাস্টমার নাম">
+    <input id="mobile" placeholder="মোবাইল নম্বর">
+  </div>
+
+  <div class="row">
+    <button class="add" id="addCustomerBtn">➕ Add</button>
+    <button class="danger" id="deleteCustomerBtn">🗑 Delete</button>
+  </div>
+
+  <div class="info">
+    <strong id="showName">নাম: ---</strong>
+    <strong id="showMobile">📱 ---</strong>
+  </div>
+
+  <div class="cards">
+    <div class="card">Balance<br>৳ <span id="balance">0</span></div>
+    <div class="card">Received<br>৳ <span id="totalIn">0</span></div>
+    <div class="card">Payment<br>৳ <span id="totalOut">0</span></div>
+  </div>
+
+  <div class="cards">
+    <div class="card">Total Received<br>৳ <span id="globalIn">0</span></div>
+    <div class="card">Total Payment<br>৳ <span id="globalOut">0</span></div>
+  </div>
+
+  <input type="date" id="date">
+  <input id="desc" placeholder="বিবরণ">
+  <input id="amount" type="number" placeholder="টাকা">
+
+  <div class="row">
+    <button class="in" id="inBtn">➕ Received</button>
+    <button class="out" id="outBtn">➖ Payment</button>
+  </div>
+
+  <div class="row">
+    <button class="add" onclick="downloadPDF()">⬇ PDF</button>
+    <button class="in" onclick="downloadExcel()">⬇ Excel</button>
+  </div>
+
+  <!-- SEARCH -->
+  <input id="search" placeholder="Search" oninput="render()">
+
+  <h3>📜 Transaction History</h3>
+  <table id="historyTable">
+    <thead>
+      <tr>
+        <th>Date</th><th>Description</th><th>Type</th><th>Amount</th><th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h3>Edit</h3>
+    <input type="date" id="editDate">
+    <input id="editDesc">
+    <input type="number" id="editAmount">
+    <div class="row">
+      <button class="in" onclick="saveEdit('in')">Save In</button>
+      <button class="out" onclick="saveEdit('out')">Save Out</button>
+    </div>
+    <button class="danger" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script src="costom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</body>
+</html>

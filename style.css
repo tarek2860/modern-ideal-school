@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma;
+}
+
+body {
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.app {
+  background: #fff;
+  width: 420px;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+}
+
+/* ===== Branding ===== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #1d4ed8;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1d4ed8;
+}
+
+.brand-phone {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.row button { flex: 1; }
+
+.add { background: #1d4ed8; color: #fff; }
+.in { background: #16a34a; color: #fff; }
+.out { background: #f59e0b; color: #fff; }
+.danger { background: #ef4444; color: #fff; }
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.cards {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.card {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+.cards .card:nth-child(1) { background: #3b82f6; }
+.cards .card:nth-child(2) { background: #22c55e; }
+.cards .card:nth-child(3) { background: #f59e0b; }
+
+.cards:nth-of-type(2) .card:nth-child(1) { background: #2563eb; }
+.cards:nth-of-type(2) .card:nth-child(2) { background: #ef4444; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+table th, table td {
+  padding: 8px;
+  font-size: 12px;
+  text-align: center;
+}
+
+thead {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+/* ===== SMALL ACTION BUTTONS (FINAL FIX) ===== */
+.action-col {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.action-btn {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn {
+  background: #10b981;
+  color: #fff;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 18px;
+  width: 90%;
+  max-width: 360px;
+  border-radius: 12px;
+}
